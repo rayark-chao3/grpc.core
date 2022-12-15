@@ -438,3 +438,19 @@ void grpcsharp_test_call_start_unary_echo() {
   fprintf(stderr, "Should never reach here, grpcsharp_test_call_start_unary_echo");
   abort();
 }
+
+// https://github.com/grpc/grpc/issues/22485#issuecomment-933666885
+void* dlopen(const char* filename, int flags) {
+  fprintf(stderr, "Should never reach here, dlopen");
+  abort();
+}
+
+char* dlerror(void) {
+  fprintf(stderr, "Should never reach here, dlerror");
+  abort();
+}
+
+void* dlsym(void* handle, const char* symbol) {
+  fprintf(stderr, "Should never reach here, dlsym");
+  abort();
+}
